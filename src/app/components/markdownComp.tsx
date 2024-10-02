@@ -1,55 +1,31 @@
-"use client"
+"use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
-const MarkdownEditor: React.FC = () => {
-
-  const [markdownContent, setMarkdownContent] = useState<string>("");
-  const editorRef = useRef<HTMLDivElement>(null);
-
- 
-  const handleInput = () => {
-    if (editorRef.current) {
-      setMarkdownContent(editorRef.current.innerText); 
-    }
+function MarkdownEditor() {
+  const [markdownText, setMarkdownText] = useState("");
+  const customComponents = {
+    h1: (props: React.ComponentProps<"h1">) => (
+      <h1 className="text-4xl font-bold text-blue-500" {...props} />
+    ),
   };
 
-  useEffect(() => {
-    // Add a listener for when content in the div changes
-    const div = editorRef.current;
-    if (div) {
-      div.addEventListener("input", handleInput);
-    }
-
-
-    
-    return () => {
-      if (div) {
-        div.removeEventListener("input", handleInput);
-      }
-    };
-  }, []);
-
   return (
-    <div className="flex flex-col md:flex-row">
-
-      <div
-        className="w-full p-4 border rounded-lg mr-4"
-        ref={editorRef}
-        contentEditable
-        suppressContentEditableWarning={true} // Suppress React contentEditable warning
-        style={{ whiteSpace: "pre-wrap", minHeight: "200px", outline: "none" }}
-      >
-        Write your markdown here...
-      </div>
-
-    
-      <div className="w-full p-4 border rounded-lg">
-        <ReactMarkdown>{markdownContent}</ReactMarkdown>
-      </div>
+    <div>
+      <h1>Write your Markdown here:</h1>
+      <textarea
+        value={markdownText}
+        onChange={(e) => setMarkdownText(e.target.value)}
+        placeholder="Type some Markdown..."
+      />
+      <h2>Your Preview:</h2>
+      <ReactMarkdown components={customComponents} remarkPlugins={[remarkGfm]}>
+        {markdownText}
+      </ReactMarkdown>
     </div>
   );
-};
+}
 
 export default MarkdownEditor;
