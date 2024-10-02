@@ -1,17 +1,17 @@
 "use client"
-// components/MarkdownEditor.tsx
+
 import React, { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 
 const MarkdownEditor: React.FC = () => {
-  // State to hold the markdown content
+
   const [markdownContent, setMarkdownContent] = useState<string>("");
   const editorRef = useRef<HTMLDivElement>(null);
 
-  // Function to handle input in the content-editable div
+ 
   const handleInput = () => {
     if (editorRef.current) {
-      setMarkdownContent(editorRef.current.innerText); // Get the text inside the contentEditable div
+      setMarkdownContent(editorRef.current.innerText); 
     }
   };
 
@@ -22,7 +22,8 @@ const MarkdownEditor: React.FC = () => {
       div.addEventListener("input", handleInput);
     }
 
-    // Cleanup the event listener when component unmounts
+
+    
     return () => {
       if (div) {
         div.removeEventListener("input", handleInput);
@@ -32,7 +33,7 @@ const MarkdownEditor: React.FC = () => {
 
   return (
     <div className="flex flex-col md:flex-row">
-      {/* Content-editable div for markdown input */}
+
       <div
         className="w-full p-4 border rounded-lg mr-4"
         ref={editorRef}
@@ -43,7 +44,7 @@ const MarkdownEditor: React.FC = () => {
         Write your markdown here...
       </div>
 
-      {/* Render markdown content */}
+    
       <div className="w-full p-4 border rounded-lg">
         <ReactMarkdown>{markdownContent}</ReactMarkdown>
       </div>
