@@ -1,10 +1,19 @@
-import TopBar from "@/app/components/TopBar";
+import RecentSection from "@/app/components/RecentSection";
 
-export default function Homepage (){
+export default function Homepage() {
+  return (
+    <div className="flex flex-col mt-40 px-10">
+      <div>
+        <RecentSection />
+      </div>
+    <div className="grid grid-col-2">
 
-    return <div>
-        <TopBar/>
-        Hello homepage
+        <div></div>
+        <div></div>
+
     </div>
 
+
+    </div>
+  );
 }
