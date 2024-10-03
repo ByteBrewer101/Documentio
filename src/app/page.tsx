@@ -1,8 +1,9 @@
-import MarkdownEditor from "./components/markdownComp";
+import Homepage from "./screens/Homepage/Homepage";
+
 
 
 export default function Home() {
-  return  <MarkdownEditor/>
+  return <Homepage/>
 
  
 
