@@ -4,18 +4,27 @@ export default function RecentSection() {
   return (
     <ScrollArea className="h-96 w-full rounded-md border ">
       <div className="flex space-x-2 h-full w-max">
-        <div className="bg-red-500 w-[300px] h-full">Hello</div>
-        <div className="bg-red-500 w-[300px] h-full">Hello</div>
-        <div className="bg-red-500 w-[300px] h-full">Hello</div>
-        <div className="bg-red-500 w-[300px] h-full">Hello</div>
-        <div className="bg-red-500 w-[300px] h-full">Hello</div>
-        <div className="bg-red-500 w-[300px] h-full">Hello</div>
-        <div className="bg-red-500 w-[300px] h-full">Hello</div>
-        <div className="bg-red-500 w-[300px] h-full">Hello</div>
-        <div className="bg-red-500 w-[300px] h-full">Hello</div>
-        <div className="bg-red-500 w-[300px] h-full">Hello</div>
-        <div className="bg-red-500 w-[300px] h-full">Hello</div>
-        <div className="bg-red-500 w-[300px] h-full">Hello</div>
+        <div className="bg-blue-500 w-[300px] h-full transition-all duration-200 hover:w-[600px] ">
+          Hello
+        </div>
+        <div className="bg-blue-500 w-[300px] h-full transition-all duration-200 hover:w-[600px] ">
+          Hello
+        </div>
+        <div className="bg-blue-500 w-[300px] h-full transition-all duration-200 hover:w-[600px] ">
+          Hello
+        </div>
+        <div className="bg-blue-500 w-[300px] h-full transition-all duration-200 hover:w-[600px] ">
+          Hello
+        </div>
+        <div className="bg-blue-500 w-[300px] h-full transition-all duration-200 hover:w-[600px] ">
+          Hello
+        </div>
+        <div className="bg-blue-500 w-[300px] h-full transition-all duration-200 hover:w-[600px] ">
+          Hello
+        </div>
+        <div className="bg-blue-500 w-[300px] h-full transition-all duration-200 hover:w-[600px] ">
+          Hello
+        </div>
       </div>
       <ScrollBar orientation="horizontal" />
     </ScrollArea>
