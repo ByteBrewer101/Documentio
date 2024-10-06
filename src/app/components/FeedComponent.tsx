@@ -42,7 +42,7 @@ const useScrollToBottom = (
   useEffect(() => {
     const handleScroll = () => {
       // Check if the user has scrolled to the bottom
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight-500) {
         // Increment n by a certain number (e.g., 5) when scrolling to the bottom
         setN((prevN) => prevN + 5);
       }
