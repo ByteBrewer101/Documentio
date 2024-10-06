@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 
 interface AppbarProps {
   user?: {
@@ -16,12 +17,12 @@ export default function TopBar({onSignin,onSignout,user}:AppbarProps) {
         <h1 className="text-white text-3xl font-semibold">Documentio</h1>
 
         <div className="flex space-x-4">
-          <button
+          <Button
             onClick={user ? onSignout : onSignin}
-            className="text-white border p-2 rounded-xl"
+            className="text-white px-4 text-sm rounded-xl"
           >
             {user ? "Logout" : "Login"}
-          </button>
+          </Button>
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>CN</AvatarFallback>
